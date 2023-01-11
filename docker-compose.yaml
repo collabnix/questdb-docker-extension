@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  questdb:
+    image: questdb/questdb
+    ports:
+      - "9000:9000"
+      - "8812:8812"
+
+    networks:
+      - collabnet
+    environment:
+      - HTTP_PORT=9000
+      - TCP_PORT=8812
+      - POSTGRES_URL=jdbc:postgresql://postgres:5432/questdb
+      - POSTGRES_USER=quest
+      - POSTGRES_PASSWORD=quest
+    links:
+      - postgres:postgres
+    networks:
+      - collabnet
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=quest
+      - POSTGRES_PASSWORD=quest
+    ports:
+      - "5432:5432"
+    networks:
+      - collabnet
+      
+  influxdb:
+    image: influxdb
+    ports:
+      - "8086:8086"
+    networks:
+      - collabnet
+
+networks:
+  collabnet:
