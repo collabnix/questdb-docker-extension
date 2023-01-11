@@ -1,6 +1,9 @@
 # QuestDB Docker Extension
 
-QuestDB is a relational column-oriented database designed for time series and event data. It uses SQL with extensions for time series to assist with real-time analytics. With this Docker extension, you can setup QuestDB with a single click
+QuestDB is a relational column-oriented database designed for time series and event data. It uses SQL with extensions for time series to assist with real-time analytics. With this Docker extension, you can setup QuestDB with a single click.
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/34368930/211806215-31aedbbf-91e5-4cec-8db6-fe8fa4097036.png">
+
 
 ## Getting Started
 
