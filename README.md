@@ -7,7 +7,7 @@ QuestDB is a relational column-oriented database designed for time series and ev
 
 ## Getting Started
 
-You can try it now! [![Install QuestDB extension](https://img.shields.io/badge/-Install%20QuestDB%20extension-white?logo=docker)](https://open.docker.com/extensions/marketplace?extensionId=collabnix/questdb-docker-extension&tag=1.0)
+You can try it now! [![Install QuestDB extension](https://img.shields.io/badge/-Install%20QuestDB%20extension-white?logo=docker)](https://open.docker.com/extensions/marketplace?extensionId=ajeetraina/questdb-docker-extension&tag=1.0)
 
 ## Cloning the repo
 
