@@ -24,18 +24,21 @@ RUN npm run build
 
 FROM alpine
 LABEL org.opencontainers.image.title="QuestDB" \
-    org.opencontainers.image.description="QuestDB Docker Extension" \
-    org.opencontainers.image.vendor="Docker Inc." \
+    org.opencontainers.image.description="QuestDB Extension for Docker Desktop" \
+    org.opencontainers.image.vendor="Ajeet Singh Raina" \
     com.docker.desktop.extension.api.version="0.3.0" \
-    com.docker.extension.screenshots="" \
-    com.docker.extension.detailed-description="" \
-    com.docker.extension.publisher-url="" \
-    com.docker.extension.additional-urls="" \
+    com.docker.extension.screenshots="[ \
+    {\"url\": \"https://raw.githubusercontent.com/collabnix/questdb-docker-extension/main/questdb.png\", \"alt\": \"Screenshot\"} \
+    ]" \
+    com.docker.extension.categories="Databases" \
+    com.docker.desktop.extension.icon="https://raw.githubusercontent.com/collabnix/questdb-docker-extension/main/questdb.svg" \
+    com.docker.extension.detailed-description="QuestDB is a relational column-oriented database designed for time series and event data. It uses SQL with extensions for time series to assist with real-time analytics. With this Docker extension, you can setup QuestDB with a single click." \
+    com.docker.extension.publisher-url='[{"title":"GitHub", "url":"https://github.com/collabnix/questdb-docker-extension/"}]' \
+    com.docker.extension.additional-urls='[{"title":"GitHub","url":"https://https://github.com/collabnix/questdb-docker-extension/"}]' \
     com.docker.extension.changelog=""
-
 COPY --from=builder /backend/bin/service /
 COPY docker-compose.yaml .
 COPY metadata.json .
-COPY docker.svg .
+COPY questdb.svg .
 COPY --from=client-builder /ui/build ui
 CMD /service -socket /run/guest-services/backend.sock
